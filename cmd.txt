@@ -1,0 +1,21 @@
+flow \
+--model ./cfg/yolo_carplate.cfg \
+--labels ./labels.txt \
+--trainer adam \
+--load -1 \
+--dataset ../data/dataset/ \
+--annotation ../data/annotations/ \
+--train \
+--summary ./logs \
+--batch 5 \
+--epoch 100 \
+--save 50 \
+--keep 5 \
+--lr 1e-04 \
+
+flow \
+--imgdir ../data/dataset/ \
+--model ./cfg/yolo_carplate.cfg \
+--load -1 \
+--batch 1 \
+--threshold 0.5 \
